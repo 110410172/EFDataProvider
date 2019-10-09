@@ -12,11 +12,11 @@ namespace EFDataProvider
     /// <summary>
     /// Represents base object context
     /// </summary>
-    public partial class SunObjectContext : DbContext, IDbContext
+    public partial class ObjectDbContext : DbContext, IDbContext
     {
         #region Ctor
 
-        public SunObjectContext(DbContextOptions<SunObjectContext> options) : base(options)
+        public ObjectDbContext(DbContextOptions<ObjectDbContext> options) : base(options)
         {
         }
 
