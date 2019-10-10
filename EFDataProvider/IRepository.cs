@@ -54,6 +54,11 @@ namespace EFDataProvider
         /// <param name="entities">Entities</param>
         void Delete(IEnumerable<TEntity> entities);
 
+        /// <summary>
+        /// Save changes of entity
+        /// </summary>
+        void SaveChanges();
+
         #endregion
 
         #region Properties
