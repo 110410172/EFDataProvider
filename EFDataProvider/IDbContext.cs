@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Infrastructure;
 using System.Linq;
 
 namespace EFDataProvider
@@ -65,5 +66,6 @@ namespace EFDataProvider
         void Detach<TEntity>(TEntity entity) where TEntity : class;
 
         #endregion
+        DatabaseFacade Database { get; }
     }
 }
