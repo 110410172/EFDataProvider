@@ -16,7 +16,7 @@ namespace EFDataProvider
     {
         #region Ctor
 
-        public ObjectDbContext(DbContextOptions<ObjectDbContext> options) : base(options)
+        public ObjectDbContext(DbContextOptions options) : base(options)
         {
         }
 
@@ -34,7 +34,8 @@ namespace EFDataProvider
             //dynamically load all entity and query type configurations
             Assembly.GetExecutingAssembly().GetTypes()
              .Where(x => x.GetInterfaces().Any(y => y.IsGenericType && y.GetGenericTypeDefinition() == typeof(IEntityTypeConfiguration<>)))
-             .ToList().ForEach(x => {
+             .ToList().ForEach(x =>
+             {
                  dynamic configurationInstance = Activator.CreateInstance(x);
                  modelBuilder.ApplyConfiguration(configurationInstance);
              });
